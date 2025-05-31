@@ -1,8 +1,15 @@
 // src/components/MovieCard.jsx
 import React from "react";
-import "./MovieCard.css"; // окремі стилі або можна робити стилізацію в index.css
+import { useNavigate } from "react-router-dom";
+import "./MovieCard.css";
 
 const MovieCard = ({ movie }) => {
+  const navigate = useNavigate();
+
+  const handleBooking = () => {
+    navigate(`/booking/${movie.id}`);
+  };
+
   return (
     <div className="movie-card">
       <img src={movie.posterUrl} alt={`${movie.title} poster`} className="movie-poster" />
@@ -13,9 +20,12 @@ const MovieCard = ({ movie }) => {
         <p className="movie-sessions">
           Сеанси:
           {movie.sessions.map((s, idx) => (
-            <span key={idx} className="session-time"> {s}</span>
+            <span key={idx} className="session-time">{s}</span>
           ))}
         </p>
+        <button className="book-button" onClick={handleBooking}>
+          Забронювати
+        </button>
       </div>
     </div>
   );

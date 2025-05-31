@@ -1,13 +1,17 @@
+// src/App.jsx
 import React from "react";
-import { movies } from "./data/movies";
-import MovieList from "./components/MovieList";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import Booking from "./pages/Booking";
 
 const App = () => {
   return (
-    <div>
-      <h1 style={{ textAlign: "center", margin: "24px 0" }}>Кінотеатр</h1>
-      <MovieList movies={movies} />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/booking/:movieId" element={<Booking />} />
+      </Routes>
+    </Router>
   );
 };
 

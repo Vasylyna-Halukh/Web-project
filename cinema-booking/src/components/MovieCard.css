@@ -42,3 +42,16 @@
   margin-left: 4px;
   font-weight: 500;
 }
+/* src/components/MovieCard.css (продовження) */
+.book-button {
+  margin-top: 12px;
+  padding: 8px 16px;
+  background-color: #1976d2;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.book-button:hover {
+  background-color: #1565c0;
+}
